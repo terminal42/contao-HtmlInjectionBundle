@@ -5,6 +5,6 @@ services:
             - "@contao.framework"
 
     terminal42_html_injection.listener.output_frontend_template:
-        class: Terminal42\HtmlInjectionBundle\OutputFrontendTemplateListener
+        class: Terminal42\HtmlInjectionBundle\EventListener\OutputFrontendTemplateListener
         arguments:
             - "@terminal42_html_injection.html_injector"

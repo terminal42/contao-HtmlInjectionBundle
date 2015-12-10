@@ -4,6 +4,7 @@ namespace Terminal42\HtmlInjectionBundle;
 
 use Contao\CoreBundle\Framework\ContaoFrameworkInterface;
 use Contao\PageModel;
+use Terminal42\HtmlInjectionBundle\Model\HtmlInjectionModel;
 
 class HtmlInjector
 {
@@ -50,7 +51,7 @@ class HtmlInjector
      */
     public function updatePageBuffer($buffer, PageModel $pageModel)
     {
-        $injectionModels = HtmlInjectionModel::findByPage($pageModel->id);
+        $injectionModels = $this->framework->getAdapter('Terminal42\HtmlInjectionBundle\Model\HtmlInjectionModel')->findByPage($pageModel->id);
 
         if ($injectionModels !== null) {
             /** @var HtmlInjectionModel $injectionModel */
@@ -70,23 +71,23 @@ class HtmlInjector
      * @param int    $position
      *
      * @return string
+     *
+     * @throws \InvalidArgumentException
      */
     public function injectCode($buffer, $code, $position)
     {
         switch ($position) {
             case self::POSITION_HEAD_BOTTOM:
-                $buffer = str_replace('</head>', $code . "\r\n</head>", $buffer);
-                break;
+                return str_replace('</head>', $code . "\r\n</head>", $buffer);
 
             case self::POSITION_BODY_TOP:
-                $buffer = preg_replace('/(<body[^>]*>)/', "$1\r\n" . $code, $buffer);
-                break;
+                return preg_replace('/(<body[^>]*>)/', "$1\r\n" . $code, $buffer);
 
             case self::POSITION_BODY_BOTTOM:
-                $buffer = str_replace('</body>', $code . "\r\n</body>", $buffer);
-                break;
-        }
+                return str_replace('</body>', $code . "\r\n</body>", $buffer);
 
-        return $buffer;
+            default:
+                throw new \InvalidArgumentException(sprintf('The position "%s" is invalid!', $position));
+        }
     }
 }

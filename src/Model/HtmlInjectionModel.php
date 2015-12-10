@@ -1,6 +1,6 @@
 <?php
 
-namespace Terminal42\HtmlInjectionBundle;
+namespace Terminal42\HtmlInjectionBundle\Model;
 
 use Contao\Database;
 use Contao\Model;

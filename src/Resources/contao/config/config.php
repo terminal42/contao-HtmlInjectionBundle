@@ -18,4 +18,4 @@ $GLOBALS['TL_HOOKS']['outputFrontendTemplate'][] = ['terminal42_html_injection.l
 /**
  * Models
  */
-$GLOBALS['TL_MODELS']['tl_html_injection'] = 'Terminal42\HtmlInjectionBundle\HtmlInjectionModel';
+$GLOBALS['TL_MODELS']['tl_html_injection'] = 'Terminal42\HtmlInjectionBundle\Model\HtmlInjectionModel';

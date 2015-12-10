@@ -1,6 +1,8 @@
 <?php
 
-namespace Terminal42\HtmlInjectionBundle;
+namespace Terminal42\HtmlInjectionBundle\EventListener;
+
+use Terminal42\HtmlInjectionBundle\HtmlInjector;
 
 class OutputFrontendTemplateListener
 {
