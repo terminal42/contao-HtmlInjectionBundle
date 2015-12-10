@@ -1,0 +1,10 @@
+services:
+    terminal42_html_injection.html_injector:
+        class: Terminal42\HtmlInjectionBundle\HtmlInjector
+        arguments:
+            - "@contao.framework"
+
+    terminal42_html_injection.listener.output_frontend_template:
+        class: Terminal42\HtmlInjectionBundle\OutputFrontendTemplateListener
+        arguments:
+            - "@terminal42_html_injection.html_injector"

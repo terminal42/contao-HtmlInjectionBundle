@@ -1,0 +1,22 @@
+{
+    "name": "terminal42/contao-HtmlInjectionBundle",
+    "type": "contao-module",
+    "description": "Inject the custom HTML code into the pages from backend.",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "terminal42 gmbh",
+            "homepage": "http://terminal42.ch"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "contao/core-bundle": "^4.1",
+        "symfony/http-kernel": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Terminal42\\HtmlInjectionBundle\\": "src"
+        }
+    }
+}
