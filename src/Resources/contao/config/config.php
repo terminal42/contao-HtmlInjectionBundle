@@ -13,7 +13,7 @@ array_insert($GLOBALS['BE_MOD']['design'], 1, [
 /**
  * Hooks
  */
-$GLOBALS['TL_HOOKS']['outputFrontendTemplate'][] = ['terminal42_html_injection.listener.output_frontend_template', 'adjustFrontendTemplate'];
+$GLOBALS['TL_HOOKS']['modifyFrontendPage'][] = ['terminal42_html_injection.listener.html_injection', 'onModifyFrontendPage'];
 
 /**
  * Models

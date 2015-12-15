@@ -4,7 +4,7 @@ services:
         arguments:
             - "@contao.framework"
 
-    terminal42_html_injection.listener.output_frontend_template:
-        class: Terminal42\HtmlInjectionBundle\EventListener\OutputFrontendTemplateListener
+    terminal42_html_injection.listener.html_injection:
+        class: Terminal42\HtmlInjectionBundle\EventListener\HtmlInjectionListener
         arguments:
             - "@terminal42_html_injection.html_injector"

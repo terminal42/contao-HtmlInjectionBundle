@@ -4,7 +4,7 @@ namespace Terminal42\HtmlInjectionBundle\EventListener;
 
 use Terminal42\HtmlInjectionBundle\HtmlInjector;
 
-class OutputFrontendTemplateListener
+class HtmlInjectionListener
 {
     /**
      * @var HtmlInjector
@@ -29,7 +29,7 @@ class OutputFrontendTemplateListener
      *
      * @return string
      */
-    public function adjustFrontendTemplate($buffer, $templateName)
+    public function onModifyFrontendPage($buffer, $templateName)
     {
         if ('fe_page' === $templateName) {
             $buffer = $this->injector->updatePageBuffer($buffer, $GLOBALS['objPage']);
