@@ -12,7 +12,7 @@ class OutputFrontendTemplateListener
     private $injector;
 
     /**
-     * OutputFrontendTemplateListener constructor.
+     * Constructor.
      *
      * @param HtmlInjector $injector
      */
@@ -31,7 +31,7 @@ class OutputFrontendTemplateListener
      */
     public function adjustFrontendTemplate($buffer, $templateName)
     {
-        if ($templateName === 'fe_page') {
+        if ('fe_page' === $templateName) {
             $buffer = $this->injector->updatePageBuffer($buffer, $GLOBALS['objPage']);
         }
 

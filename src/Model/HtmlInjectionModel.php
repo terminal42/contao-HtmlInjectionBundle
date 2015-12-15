@@ -2,9 +2,17 @@
 
 namespace Terminal42\HtmlInjectionBundle\Model;
 
-use Contao\Database;
 use Contao\Model;
 
+/**
+ * HtmlInjectionModel
+ *
+ * @property int    $tstamp
+ * @property string $name
+ * @property string $position
+ * @property string $pages
+ * @property string $code
+ */
 class HtmlInjectionModel extends Model
 {
     /**
@@ -14,7 +22,7 @@ class HtmlInjectionModel extends Model
     protected static $strTable = 'tl_html_injection';
 
     /**
-     * Find the record by page ID
+     * Find records by page ID
      *
      * @param int $pageId
      *

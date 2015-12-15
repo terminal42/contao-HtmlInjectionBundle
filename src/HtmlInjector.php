@@ -51,12 +51,16 @@ class HtmlInjector
      */
     public function updatePageBuffer($buffer, PageModel $pageModel)
     {
-        $injectionModels = $this->framework->getAdapter('Terminal42\HtmlInjectionBundle\Model\HtmlInjectionModel')->findByPage($pageModel->id);
+        /**
+         * @var HtmlInjectionModel   $adapter
+         * @var HtmlInjectionModel[] $models
+         */
+        $adapter = $this->framework->getAdapter('Terminal42\HtmlInjectionBundle\Model\HtmlInjectionModel');
+        $models  = $adapter->findByPage($pageModel->id);
 
-        if ($injectionModels !== null) {
-            /** @var HtmlInjectionModel $injectionModel */
-            foreach ($injectionModels as $injectionModel) {
-                $buffer = $this->injectCode($buffer, $injectionModel->code, $injectionModel->position);
+        if (null !== $models) {
+            foreach ($models as $model) {
+                $buffer = $this->injectCode($buffer, $model->code, $model->position);
             }
         }
 
