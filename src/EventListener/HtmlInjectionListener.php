@@ -31,7 +31,7 @@ class HtmlInjectionListener
      */
     public function onModifyFrontendPage($buffer, $templateName)
     {
-        if ('fe_page' === $templateName) {
+        if (0 === strpos($templateName, 'fe_')) {
             $buffer = $this->injector->updatePageBuffer($buffer, $GLOBALS['objPage']);
         }
 
