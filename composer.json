@@ -1,7 +1,7 @@
 {
-    "name": "terminal42/contao-HtmlInjectionBundle",
-    "type": "contao-module",
-    "description": "Inject the custom HTML code into the pages from backend.",
+    "name": "terminal42/contao-html-injection",
+    "type": "contao-bundle",
+    "description": "Inject custom HTML code into Contao page output.",
     "license": "LGPL-3.0+",
     "authors": [
         {
