@@ -6,7 +6,7 @@
 array_insert($GLOBALS['BE_MOD']['design'], 1, [
     'html_injection' => [
         'tables' => ['tl_html_injection'],
-        'icon'   => 'bundles/terminal42htmlinjectionbundle/icon.png',
+        'icon'   => 'bundles/terminal42htmlinjection/icon.png',
     ],
 ]);
 
